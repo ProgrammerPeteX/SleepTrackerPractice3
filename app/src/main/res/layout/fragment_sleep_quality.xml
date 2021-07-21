@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sleepQualityViewModel"
+            type="com.pdstudios.sleeptrackerpractice3.frags.sleep_quality.SleepQualityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".frags.sleep_quality.SleepQualityFragment">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/mySleepQualityWas"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_3of6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_3of6"
+            android:onClick="@{()->sleepQualityViewModel.onSetQuality(3)}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button_2of6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_2of6" />
+
+        <Button
+            android:id="@+id/button_2of6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_2of6"
+            android:onClick="@{()->sleepQualityViewModel.onSetQuality(2)}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button_1of6"
+            app:layout_constraintEnd_toStartOf="@+id/button_3of6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_1of6" />
+
+        <Button
+            android:id="@+id/button_1of6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/_1of6"
+            android:onClick="@{()->sleepQualityViewModel.onSetQuality(1)}"
+            app:layout_constraintEnd_toStartOf="@+id/button_2of6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <Button
+            android:id="@+id/button_4of6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_4of6"
+            android:onClick="@{()->sleepQualityViewModel.onSetQuality(4)}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button_5of6"
+            app:layout_constraintEnd_toStartOf="@+id/button_5of6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_5of6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_5of6"
+            android:onClick="@{()->sleepQualityViewModel.onSetQuality(5)}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button_6of6"
+            app:layout_constraintEnd_toStartOf="@+id/button_6of6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_4of6" />
+
+        <Button
+            android:id="@+id/button_6of6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/_6of6"
+            android:onClick="@{()->sleepQualityViewModel.onSetQuality(6)}"
+            app:layout_constraintBottom_toBottomOf="@+id/button_5of6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_5of6"
+            app:layout_constraintTop_toBottomOf="@+id/button_3of6"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

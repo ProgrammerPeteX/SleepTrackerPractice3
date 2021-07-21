@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SleepTrackerPractice3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mySleepQualityWas">My sleep quality was...</string>
+    <string name="_1of6">1/6</string>
+    <string name="_2of6">2/6</string>
+    <string name="_3of6">3/6</string>
+    <string name="_4of6">4/6</string>
+    <string name="_5of6">5/6</string>
+    <string name="_6of6">6/6</string>
+    <string name="start">start</string>
+    <string name="stop">stop</string>
+    <string name="id">ID:</string>
+    <string name="_0">0</string>
+    <string name="delete">delete</string>
+    <string name="clear_all">clear all</string>
+    <string name="clear">clear</string>
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sleepTrackingViewModel"
+            type="com.pdstudios.sleeptrackerpractice3.frags.sleep_tracking.SleepTrackingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".frags.sleep_tracking.SleepTrackingFragment">
+
+        <Button
+            android:id="@+id/button_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{sleepTrackingViewModel.enableStart}"
+            android:onClick="@{()->sleepTrackingViewModel.onStartTracking()}"
+            android:text="@string/start"
+            app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            app:layout_constraintEnd_toStartOf="@+id/button_stop"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stop"
+            android:onClick="@{()->sleepTrackingViewModel.onStopTracking()}"
+            android:enabled="@{sleepTrackingViewModel.enableStop}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_start" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="327dp"
+            android:layout_height="460dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:text="@{sleepTrackingViewModel.nightsString}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/id"
+            app:layout_constraintBottom_toBottomOf="@+id/editText_deleteId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editText_deleteId" />
+
+        <EditText
+            android:id="@+id/editText_deleteId"
+            android:layout_width="71dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="12dp"
+            android:ems="10"
+            android:hint="@string/_0"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="@{sleepTrackingViewModel.deleteKey.toString()}"
+            app:layout_constraintBottom_toBottomOf="@+id/button_delete"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/button_delete"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/delete"
+            android:onClick="@{()->sleepTrackingViewModel.onDelete()}"
+            android:enabled="@{sleepTrackingViewModel.enableClear}"
+            app:layout_constraintBottom_toBottomOf="@+id/button_clear"
+            app:layout_constraintStart_toEndOf="@+id/editText_deleteId"
+            app:layout_constraintTop_toTopOf="@+id/button_clear" />
+
+        <Button
+            android:id="@+id/button_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:onClick="@{()->sleepTrackingViewModel.onClear()}"
+            android:text="@string/clear"
+            android:enabled="@{sleepTrackingViewModel.enableClear}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
